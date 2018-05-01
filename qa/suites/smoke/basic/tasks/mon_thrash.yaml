@@ -24,6 +24,7 @@ overrides:
         ms inject socket failures: 2500
 tasks:
 - install: null
+- ssh-keys:
 - ceph-ansible:
 - mon_thrash:
     revive_delay: 90

@@ -9,6 +9,7 @@ overrides:
         ms inject socket failures: 2500
 tasks:
 - install: null
+- ssh-keys:
 - ceph-ansible:
     vars:
      ceph_conf_overrides:
