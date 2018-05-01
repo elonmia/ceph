@@ -7,10 +7,7 @@ overrides:
         ms inject delay type: osd
         ms inject internal delays: 0.002
         ms inject socket failures: 2500
-tasks:
-- install: null
-- ssh-keys:
-- ceph-ansible:
+  ceph_ansible:
     vars:
      ceph_conf_overrides:
         ceph_test: true
@@ -23,11 +20,16 @@ tasks:
         ceph_mgr_modules:
           - status
           - restful
-        cephfs_pools:
-          - name: "cephfs_data"
-            pgs: "64"
-          - name: "cephfs_metadata"
-            pgs: "64"
+     cephfs_pools:
+        - name: "cephfs_data"
+          pgs: "64"
+        - name: "cephfs_metadata"
+          pgs: "64"
+
+tasks:
+- install: null
+- ssh-keys:
+- ceph-ansible:
 - thrashosds:
     chance_pgnum_grow: 2
     chance_pgpnum_fix: 1
